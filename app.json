@@ -1,0 +1,58 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/category/category/category",
+    "pages/my/my/my",
+    "pages/category/search/search",
+    "pages/category/result/result",
+    "pages/category/joingroup/joingroup",
+    "pages/category/comfirmpay/comfirmpay",
+    "pages/my/addresslist/addresslist",
+    "pages/my/addaddress/addaddress",
+    "pages/category/goods/goods",
+    "pages/my/mygroup/mygroup",
+    "pages/my/myorder/myorder",
+    "pages/my/orderdetail/orderdetail",
+    "pages/index/hotsell",
+    "pages/index/getcoupon",
+    "pages/my/collect/collect",
+    "pages/my/wallet/wallet",
+    "pages/my/coupon/coupon",
+    "pages/category/assess/assess",
+    "pages/category/assesslist/assesslist",
+    "pages/my/payway/payway",
+    "pages/my/return/return",
+    "pages/my/recharge/recharge",
+    "pages/my/updateinfo/updateinfo"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#393A3F",
+    "navigationBarTitleText": "微商城",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#F6F6F6"
+  },
+  "tabBar": {
+    "color": "#808080",
+    "selectedColor": "#EE1529",
+    "list": [{
+        "iconPath": "images/f_01.png",
+        "selectedIconPath": "images/f_02.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "iconPath": "images/f_03.png",
+        "selectedIconPath": "images/f_04.png",
+        "pagePath": "pages/category/category/category",
+        "text": "分类"
+      },
+      {
+        "iconPath": "images/f_05.png",
+        "selectedIconPath": "images/f_06.png",
+        "pagePath": "pages/my/my/my",
+        "text": "我的"
+      }
+    ]
+  }
+}

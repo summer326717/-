@@ -1,0 +1,45 @@
+<view class="add">
+  <view class="bor">
+    <span class="add_s">名字</span>
+    <span class="ipt">
+      <input class="add_i" value="{{receiver_name}}" bindblur="getName" type="text" placeholder="请输入收件人姓名" />
+    </span>
+  </view>
+  <view class="bor">
+    <span class="add_s">电话</span>
+    <span class="ipt">
+      <input class="add_i" value="{{receiver_phone}}" bindblur="getTel" type="tel" placeholder="请输入11位手机号码或0开头的固话" />
+    </span>
+  </view>
+  <view class="bor">
+    <span class="add_s">地区</span>
+    <span class="ipt">
+      <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}"
+        range="{{multiArray}}" range-key="{{'area_name'}}">
+        <view class="picker">
+          当前选择：{{multiArray[0][multiIndex[0]]}}，{{multiArray[1][multiIndex[1]]}}，{{multiArray[2][multiIndex[2]]}}
+        </view>
+      </picker>
+      <input class="add_i i_icon" value="{{pcr_address}}" type="text" disabled="true" placeholder="请选择省市区" bindtap="selectPcr"
+      />
+    </span>
+  </view>
+  <view class="bor">
+    <span class="add_s">
+      <text decode="{{true}}">&nbsp;</text>
+    </span>
+    <span class="ipt">
+      <input class="add_i" value="{{receiver_address}}" bindblur="getAddress" type="text" placeholder="请详细到门牌号" />
+    </span>
+  </view>
+  <view class="bor">
+    <span>保存为新地址</span>
+    <span class="ipt m_d">
+      <switch wx:if="{{receiver_is_default==0}}" bindchange="newChange" />
+      <switch wx:if="{{receiver_is_default==1}}" checked bindchange="newChange" />
+    </span>
+  </view>
+  <view class="bor">
+    <button class="save" bindtap="saveAddress">保存</button>
+  </view>
+</view>

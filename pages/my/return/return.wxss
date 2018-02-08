@@ -1,0 +1,48 @@
+.return .top {
+    padding: 30rpx;
+    display: flex;
+}
+
+.return .top image {
+    width: 200rpx;
+    height: 200rpx;
+    margin-right: 20rpx;
+}
+
+.return .top .right {
+    line-height: 40rpx;
+}
+
+.return .ipt {
+    width: 100%;
+    height: 200rpx;
+    padding: 25rpx;
+    border: 1px solid #dedede;
+}
+
+.return .upload {
+    padding: 30rpx;
+}
+
+.return .upload image {
+    width: 150rpx;
+    height: 150rpx;
+    margin-right: 20rpx;
+}
+
+.return .info {
+    padding: 0 30rpx;
+    color: #ee1529;
+    font-size: 20rpx;
+}
+
+.return .sub_btn {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 88rpx;
+    color: #ffffff;
+    background: #ee1529;
+    font-size: 28rpx;
+}

@@ -1,0 +1,32 @@
+<view class="address">
+  <view class="item_list">
+    <view class="item" wx:for="{{address_list}}" wx:key="{{index}}">
+      <view class="item_t" data-i="{{index}}" bindtap="selectAddress">
+        <view>
+          <span>{{item.receiver_name}}</span>
+          <span class="tel">{{item.receiver_phone}}</span>
+        </view>
+        <view class="addr">
+          <span>{{item.province_name}}{{item.city_name}}{{item.region_name}}</span>
+          <span>{{item.receiver_address}}</span>
+        </view>
+      </view>
+      <view class="item_b">
+        <span class="s_check" wx:if="{{item.receiver_is_default==1}}">
+          <label class="s_check_d"></label>
+        </span>
+        <span class="s_check" wx:if="{{item.receiver_is_default==0}}">
+          <label bindtap="to_default"></label>
+        </span>
+        <button data-id='{{item.address_id}}' bindtap="editAddress">编辑</button>
+        <button data-id='{{item.address_id}}' bindtap="deleteAddress">删除</button>
+      </view>
+    </view>
+    <view class="no_data" wx:if="{{address_list==''}}">
+      <image src="http://192.168.18.148/images/no_data.png"></image>
+    </view>
+  </view>
+  <view>
+    <button class="add" bindtap="addAddress">+添加收件地址</button>
+  </view>
+</view>

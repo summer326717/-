@@ -1,0 +1,48 @@
+.s_p_way .s_bot .tit {
+    color: #4e4e4e;
+    padding: 20rpx 30rpx;
+    border-bottom: 1px solid #dedede;
+}
+
+.s_p_way .list .item {
+    padding: 15rpx 30rpx;
+    border-bottom: 1px solid #dedede;
+}
+
+.s_p_way .list .item span {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20rpx;
+}
+
+.s_p_way .list .item image {
+    height: 80rpx;
+    width: 80rpx;
+}
+
+.s_p_way .list .item .selected,
+.s_p_way .list .item .no_select {
+    width: 30rpx;
+    height: 30rpx;
+    display: inline-block;
+}
+
+.s_p_way .list .item .selected {
+    background: url("http://192.168.18.148/images/selected.png");
+    background-size: 100% 100%;
+}
+
+.s_p_way .list .item .no_select {
+    background: url("http://192.168.18.148/images/no_select.png");
+    background-size: 100% 100%;
+}
+
+.s_p_way .btn {
+    color: #ffffff;
+    width: 90%;
+    margin-left: 5%;
+    background: #ee1529;
+    padding: 25rpx 0;
+    margin-top: 50rpx;
+    border-radius: 10rpx;
+}

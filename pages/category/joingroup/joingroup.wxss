@@ -1,0 +1,126 @@
+.joingroup {
+    background: #f6f6f6;
+    min-height: 100%;
+}
+
+.joingroup .top {
+    background: #ffffff;
+    display: flex;
+    padding: 25rpx;
+}
+
+.joingroup .top .top_l {
+    border: 1px solid #f2f2f2;
+    border-radius: 10rpx;
+    height: 220rpx;
+    width: 200rpx;
+}
+
+.joingroup .top .top_l image {
+    width: 100%;
+    height: 100%;
+}
+
+.joingroup .top .top_r {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-left: 30rpx;
+    line-height: 35rpx;
+}
+
+.joingroup .top .top_r .detail {
+    color: #808080;
+    font-size: 22rpx;
+}
+
+.joingroup .top .top_r .sold {
+    font-size: 20rpx;
+    color: #808080;
+    padding-top: 20rpx;
+}
+
+.joingroup .top .top_r .sell_price {
+    color: #ee1529;
+}
+
+.joingroup .top .top_r .market_price {
+    color: #808080;
+    font-size: 22rpx;
+    text-decoration: line-through;
+}
+
+.joingroup .middle,
+.joingroup .bottom {
+    margin-top: 30rpx;
+    background: #ffffff;
+}
+
+.joingroup .middle .tit,
+.joingroup .bottom .tit {
+    padding: 20rpx 30rpx;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.joingroup .middle .g_mem_list {
+    padding: 30rpx;
+}
+
+.joingroup .middle .g_mem_list .member {
+    position: relative;
+    display: inline-block;
+    margin-right: 15rpx;
+}
+
+.joingroup .middle .g_mem_list image {
+    width: 80rpx;
+    height: 80rpx;
+    display: block;
+    border-radius: 50%;
+}
+
+.joingroup .middle .g_mem_list i {
+    position: absolute;
+    top: -10rpx;
+    left: -10rpx;
+    display: inline-block;
+    background: #ee1529;
+    color: #ffffff;
+    border-radius: 10rpx;
+    font-size: 20rpx;
+    padding: 3rpx;
+}
+
+.joingroup .middle .g_mem_list .tuanzhang {
+    border: 1px solid #ee1529;
+}
+
+.joingroup .middle .g_mem_list .btn_join {
+    color: #ffffff;
+    background: #ee1529;
+    line-height: 90rpx;
+    display: block;
+    width: 100%;
+    border-radius: 10rpx;
+}
+
+.joingroup .bottom .tit {
+    padding-left: 60rpx;
+    background: url("../assets/images/g_03.png") no-repeat 30rpx 50%;
+    background-size: 24rpx 24rpx;
+}
+
+.joingroup .bottom .ul {
+    padding: 20rpx 30rpx;
+}
+
+.joingroup .bottom .ul view {
+    display: flex;
+    flex-flow: row wrap;
+    line-height: 40rpx;
+}
+
+.joingroup .bottom .ul view span {
+    width: 33.3%;
+    text-align: center;
+}

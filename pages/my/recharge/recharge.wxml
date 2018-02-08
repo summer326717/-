@@ -1,0 +1,12 @@
+<view class="recharge">
+  <view class="box">
+    <view>充值金额：</view>
+    <view class="pr">
+      <span class="i">￥</span>
+      <input class="ipt" type="number" bindblur="getMoney" />
+    </view>
+    <view>
+      <button class="btn" bindtap="recharge">确认</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,68 @@
+.coupon_list {
+    padding: 0 30rpx;
+}
+
+.coupon_list .tab {
+    display: flex;
+    align-items: center;
+    padding-top: 20rpx;
+    border-bottom: 1px solid #b2b2b2;
+}
+
+.coupon_list .tab .it {
+    flex: 1;
+    width: 33%;
+}
+
+.coupon_list .tab .it .li {
+    padding: 0 20rpx;
+}
+
+.coupon_list .tab .it .li button {
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: #ffffff;
+}
+
+.coupon_list .tab .it .li .active {
+    color: #FF6F5B;
+    border-bottom: 1px solid #FF6F5B;
+}
+
+.coupon_list .item {
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 20rpx;
+    line-height: 40rpx;
+    margin-top: 30rpx;
+    background: url("http://192.168.18.148/images/coupon.png") no-repeat;
+    background-size: cover;
+}
+
+.coupon_list .active {
+    background: url("http://192.168.18.148/images/coupon2.png") no-repeat;
+    background-size: cover;
+}
+
+.coupon_list .item .left {
+    width: 30%;
+    text-align: center;
+}
+
+.coupon_list .item .right {
+    width: 45%;
+    text-align: center;
+}
+
+.coupon_list .item .right .time {
+    font-size: 20rpx;
+}
+
+.coupon_list .item .btn {
+    width: 20%;
+    border-radius: 10rpx;
+    background: #ffffff;
+    color: #ec263b;
+}

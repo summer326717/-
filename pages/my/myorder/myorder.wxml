@@ -1,0 +1,67 @@
+<view class="group">
+  <view class="menu">
+    <view class="li {{order_type==9?'active':''}}" data-type='9' bindtap="changeStatus">全部</view>
+    <view class="li {{order_type==2?'active':''}}" data-type='2' bindtap="changeStatus">待付款</view>
+    <view class="li {{order_type==4?'active':''}}" data-type='4' bindtap="changeStatus">待收货</view>
+    <view class="li {{order_type==7?'active':''}}" data-type='7' bindtap="changeStatus">退款中</view>
+    <view class="li {{order_type==5?'active':''}}" data-type='5' bindtap="changeStatus">已完成</view>
+  </view>
+  <view class="item_list">
+    <view class="item" wx:for="{{order_list}}" wx:key="{{index}}">
+      <view class="status" wx:if="{{item.state==2}}">待付款</view>
+      <view class="status" wx:if="{{item.state==3}}">待发货</view>
+      <view class="status" wx:if="{{item.state==4}}">待收货</view>
+      <view class="status" wx:if="{{item.state==5}}">已完成</view>
+      <view class="status" wx:if="{{item.state==6}}">退货中</view>
+      <view class="status" wx:if="{{item.state==7}}">退款中</view>
+      <view class="status" wx:if="{{item.state==8}}">退款成功</view>
+      <view class="status" wx:if="{{item.state==0}}">订单已取消</view>
+      <view class="goods">
+        <navigator url="/pages/category/goods/goods?id={{item.goods_id}}" wx:if="{{item.state==2}}">
+          <image mode="aspectFill" class="left" src="{{item.goodsIcon}}"></image>
+        </navigator>
+        <view class="right">
+          <navigator url="/pages/my/orderdetail/orderdetail?id={{item.order_id}}&preAmount={{item.preAmount}}" wx:if="{{item.state==2}}">
+            <view class="name mb60">{{item.goods_name}}</view>
+            <view class="price">本团已预订{{item.preAmount}}件,距离下一优惠还有{{item.nextFreeNum}}件</view>
+            <view>结算时间
+              <!--<settime></settime>-->
+            </view>
+          </navigator>
+        </view>
+      </view>
+      <view class="goods" wx:if="{{item.state!=2}}">
+        <image mode="aspectFill" class="left" src="{{item.goodsIcon}}" bindtap="jumpGoods(item.goods_id,item.orderType,item.order_id)"></image>
+        <view class="right">
+          <view class="name mb60">{{item.goods_name}}</view>
+          <view class="price">{{item.specifications_id}}</view>
+        </view>
+      </view>
+      <view class="num" wx:if="{{item.state!=5}}">
+        <span>共{{item.buy_count}}件商品</span>
+        <span>预付款：￥{{item.pay_amount}}</span>
+        <span>已节省￥{{item.preferential_amount}}</span>
+      </view>
+      <view class="num" wx:if="{{item.state==5}}">
+        <span>订单总额：￥{{item.pay_amount}}</span>
+      </view>
+      <view class="btn" wx:if='{{item.state==2}}'>
+        <button class="cancel" data-orderid='{{item.order_id}}' bindtap="cancelOrder">取消</button>
+        <button class="sure" data-orderid="{{item.order_id}}" data-preamount="{{item.preAmount}}" bindtap="payOrder">支付</button>
+      </view>
+      <view class="btn" wx:if='{{item.state==4}}'>
+        <!--<button class="cancel" @click="look_log(item.order_id)">查看物流</button>-->
+        <button class="sure" data-orderid="{{item.order_id}}" bindtap="confirmReceipt">确认收货</button>
+      </view>
+      <view class="btn" wx:if='{{item.state==5}}'>
+        <!--<button wx:if="{{item.commentState=='N'}}" class="sure" data-orderid="{{item.order_id}}" data-goodsIcon="{{item.goodsIcon}}"
+          bindtap="assessOrder">评价</button>
+        <button class="cancel" data-orderid="{{item.order_id}}" data-amout="{{item.preferential_amount}}" bindtap="returnMoney">申请退货</button>-->
+        <button class="cancel" data-goodsId="{{item.goods_id}}" bindtap="buyAgain">再次购买</button>
+      </view>
+    </view>
+    <view class="no_data" wx:if="{{order_list==''&&page_no==1}}">
+      <image src="http://192.168.18.148/images/no_data.png"></image>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,35 @@
+<view class="coupon_list">
+  <view class="tab">
+    <view class="it">
+      <view class="li">
+        <button class="{{coupon_type==1?'active':''}}" data-type="1" bindtap="changeState">未使用</button>
+      </view>
+    </view>
+    <view class="it">
+      <view class="li">
+        <button class="{{coupon_type==2?'active':''}}" data-type="2" bindtap="changeState">已使用</button>
+      </view>
+    </view>
+    <view class="it">
+      <view class="li">
+        <button class="{{coupon_type==3?'active':''}}" data-type="3" bindtap="changeState">已过期</button>
+      </view>
+    </view>
+  </view>
+  <view class="item {{(item.state==1&&item.groupState==0)||coupon_type==3?'active':''}}" wx:for="{{data_list}}" wx:key="{{index}}">
+    <view class="left">
+      <view wx:if="{{item.discountMode==1}}">￥{{item.discountAmount}}</view>
+      <view wx:if="{{item.discountMode==2}}">{{item.discountFactor}}折</view>
+      <view>满{{item.rangeCondition}}使用</view>
+    </view>
+    <view class="right">
+      <view class="elli">{{item.rangeName}}</view>
+      <view class="time" wx:if="{{item.endTime!='长期有效'}}">{{item.createTime}}~{{item.endTime}}</view>
+      <view class="time" wx:else>{{item.endTime}}</view>
+    </view>
+    <button class="btn" wx:if="{{item.state==1&&item.groupState==1&&coupon_type!=3}}">立即使用</button>
+  </view>
+  <view class="no_data" wx:if="{{data_list==''&&page_no==1}}">
+    <image src="http://192.168.18.148/images/no_data.png"></image>
+  </view>
+</view>

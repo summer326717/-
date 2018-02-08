@@ -1,0 +1,61 @@
+<view class="group">
+  <view class="menu">
+    <view class="li {{order_type==9?'active':''}}" data-type='9' bindtap="changeStatus">全部</view>
+    <view class="li {{order_type==1?'active':''}}" data-type='1' bindtap="changeStatus">拼团中</view>
+    <view class="li {{order_type==2?'active':''}}" data-type='2' bindtap="changeStatus">拼团成功</view>
+    <view class="li {{order_type==0?'active':''}}" data-type='0' bindtap="changeStatus">拼团失败</view>
+  </view>
+  <view class="item_list">
+    <view class="item" wx:for="{{order_list}}" wx:key="{{index}}">
+      <view class="status" wx:if="{{item.groupState==0&&item.addState==0&&item.state!=0}}">拼团失败</view>
+      <view class="status" wx:if="{{item.groupState==0&&item.state==0}}">订单已取消</view>
+      <view class="status" wx:if="{{item.groupState==1&&item.state!=0}}">拼团中</view>
+      <view class="status" wx:if="{{item.groupState==1&&item.state==0}}">订单已取消</view>
+      <view class="status" wx:if="{{item.groupState==2&&item.state!=0&&item.state!=2}}">拼团成功</view>
+      <view class="status" wx:if="{{item.groupState==2&&item.state==2}}">订单过期</view>
+      <view class="status" wx:if="{{item.groupState==0&&item.addState==1}}">已加钱购</view>
+      <view class="goods">
+        <image mode="aspectFill" class="left" src="{{item.goodsIcon}}"></image>
+        <view class="right" wx:if='{{item.groupState==0&&item.addState==0}}'>
+          <navigator url="/pages/category/goods/goods?id={{item.goods_id}}">
+            <view class="name mb60">{{item.goods_name}}</view>
+            <view class="price">本团已预订{{item.preAmount}}件</view>
+            <view>本商品支持每件加{{item.add_money_buy}}元直接购</view>
+            <i class="fail"></i>
+          </navigator>
+        </view>
+        <view class="right" wx:if='{{item.groupState==0&&item.addState==1}}' data-i='{{index}}' bindtap="toGroup">
+          <view class="name mb60">{{item.goods_name}}</view>
+          <view>本商品已加{{item.add_money_buy}}元直接购</view>
+        </view>
+        <view class="right" wx:if='{{item.groupState==1||item.groupState==2}}' data-i='{{index}}' bindtap="toGroup">
+          <view class="name">{{item.goods_name}}</view>
+          <span class="price">本团已预订{{item.preAmount}}件</span>
+          <span class="price">当前价格：
+            <span class="red">￥{{item.nowPrice}}</span>
+          </span>
+          <view wx:if="{{item.groupState==1}}">结算时间：
+            <!--<settime></settime>-->
+          </view>
+        </view>
+      </view>
+      <view class="num">
+        <span>共{{item.buy_count}}件商品</span>
+        <span>预付款：￥{{item.pay_amount}}</span>
+        <span>已节省￥{{item.preferential_amount}}</span>
+      </view>
+      <view class="btn" wx:if='{{item.groupState==1&&item.state==2}}'>
+        <button class="cancel" data-orderid="{{item.order_id}}" bindtap="cancelOrder">取消订单</button>
+        <button class="sure" data-orderid="{{item.order_id}}" data-preAmount="{{item.preAmount}}" bindtap="payOrder">支付</button>
+      </view>
+      <view class="btn" wx:if='{{item.groupState==0&&(item.state==5||item.state==3)&&item.addState==0}}'>
+        <button class="cancel" data-orderid="{{item.order_id}}" bindtap="backMoney">退款</button>
+        <button class="sure" data-orderid="{{item.order_id}}" data-num="{{item.add_money_buy}}" bindtap="addBuy">加钱购</button>
+      </view>
+    </view>
+    <view class="no_data" wx:if="{{order_list==''&&page_no==1}}">
+      <image src="http://192.168.18.148/images/no_data.png"></image>
+    </view>
+    <view class="listnodata" v-if="is_to_bottom">主人，已经到底啦</view>
+  </view>
+</view>

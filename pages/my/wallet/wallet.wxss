@@ -1,0 +1,35 @@
+.wallet {
+    background: #ffffff;
+}
+
+.wallet .top {
+    padding: 30rpx;
+    position: relative;
+    border-bottom: 20rpx solid #f6f6f6;
+}
+
+.wallet .top .num {
+    color: #ee1529;
+    font-size: 44rpx;
+    padding: 10rpx 0;
+}
+
+.wallet .top .btn {
+    position: absolute;
+    top: 30rpx;
+    right: 30rpx;
+    color: #ffffff;
+    background: #ee1529;
+    padding: 20rpx 30rpx;
+    border-radius: 10rpx;
+}
+
+.wallet .bottom {
+    padding: 0 30rpx;
+}
+
+.wallet .bottom .li {
+    line-height: 50rpx;
+    padding: 20rpx 30rpx;
+    border-bottom: 1px solid #efebeb;
+}

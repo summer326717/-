@@ -1,0 +1,70 @@
+<view class="pay">
+  <view wx:if="{{!is_pay}}">
+    <view class="top" wx:if="{{address!=''&&address!=null}}" bindtap="selectAddr">
+      <view>
+        <span class="name">{{address.receiver_name}}</span>
+        <span>{{address.receiver_phone}}</span>
+      </view>
+      <view wx:if="{{ssq}}">{{ssq}}{{address.receiver_address}}</view>
+      <view wx:else>{{address.province_name}}{{address.city_name}}{{address.region_name}}{{address.receiver_address}}</view>
+      <i class="i"></i>
+    </view>
+    <view class="top" wx:if="{{address==''||address==null}}" bindtap="selectAddr">
+      <p>请选择地址</p>
+      <i class="i"></i>
+    </view>
+    <view class="middle" wx:if="{{orderInfo!=''}}">
+      <view class="left">
+        <image mode="aspectFill" src="{{orderInfo.goods_icon}}"></image>
+      </view>
+      <view class="right">
+        <view class="elli">{{orderInfo.goods_name}}</view>
+        <view class="gray">规格：{{spec.colour}} {{spec.magnitude}}</view>
+        <view>￥{{orderInfo.buy_price}}/件</view>
+      </view>
+    </view>
+    <router-link :to="{ path: 'coupons', query: { id: goodsId,orderid:order_id,ProMoney:ProMoney}}">
+      <view class="coupon">
+        <view class="cou">优惠券</view>
+        <view class="money">{{money}}
+          <text decode="true">&nbsp;&nbsp;&nbsp;&nbsp;</text>></view>
+      </view>
+    </router-link>
+    <view class="rule">
+      <view class="tit">拼团规则</view>
+      <view class="ul">
+        <view>
+          <span>人数</span>
+          <span>优惠</span>
+          <span>折后价</span>
+        </view>
+        <view wx:for="{{groupsRule}}" wx:key="{{index}}">
+          <span>{{item.downNum}}-{{item.upNum}}</span>
+          <span>￥{{item.discountPrice}}</span>
+          <span>￥{{item.salePrice}}</span>
+        </view>
+      </view>
+      <view class="tit">拼团说明</view>
+      <view class="ul">
+        <view>先按原价预支付，待拼团时间截止后，根据参团人数对应的价格，返还差价到个人钱包</view>
+      </view>
+    </view>
+    <view class="bottom">
+      <view class="left">
+        预付款：
+        <span class="price">￥{{orderInfo.order_amounts}}</span>
+        <span class="red">免运费</span>
+      </view>
+      <view class="btn_pay" bindtap="payMoney">立即付款</view>
+    </view>
+  </view>
+  <view wx:if="{{is_pay}}" class="paied">
+    <p>
+      <image src="http://192.168.18.148/images/paied.png"></image>
+    </p>
+    <p class="p">该订单已支付</p>
+    <p>
+      <navigator class="btn" url="/pages/category/goods/goods?id={{item.goods_id}}">继续团购</navigator>
+    </p>
+  </view>
+</view>

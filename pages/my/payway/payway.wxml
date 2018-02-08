@@ -1,0 +1,27 @@
+<view class="s_p_way">
+  <view class="s_bot">
+    <view class="tit" wx:if="{{order_type==2}}">需加钱的金额为：
+      <span>￥{{add_money_buy}}</span>
+    </view>
+    <view class="tit">选择支付方式</view>
+    <view class="list">
+      <view class="item" data-type="2" bindtap="SelectPayWay">
+        <span class="{{pay_way==2?'selected':''}} {{pay_way==1?'no_select':''}}"></span>
+        <span>
+          <image src="http://192.168.18.148/images/weixin.png"></image>
+        </span>
+        <span>微信支付</span>
+      </view>
+      <view class="item" data-type="1" bindtap="SelectPayWay">
+        <span class="{{pay_way==2?'no_select':''}} {{pay_way==1?'selected':''}}"></span>
+        <span>
+          <image src="http://192.168.18.148/images/yue.png"></image>
+        </span>
+        <span>余额支付</span>
+      </view>
+    </view>
+  </view>
+  <view>
+    <button class="btn" bindtap="justPay">确认支付</button>
+  </view>
+</view>

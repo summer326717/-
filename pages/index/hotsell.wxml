@@ -1,0 +1,39 @@
+<view class="hot_sell">
+  <view class="s_list">
+    <view>
+      <view class="li" wx:for="{{data_list}}" wx:key="{{index}}">
+        <view wx:if="{{item.groupState!=1}}" class="item" bindtap="Derect">
+          <view class="tc">
+            <image mode="aspectFill" src="{{item.goodsIcon}}"></image>
+          </view>
+          <view class="descr">
+            <view class="name">{{item.goodsName}}</view>
+            <view class="price">
+              <span wx:if="{{item.platformPrice}}">￥{{item.platformPrice}}</span>
+              <span wx:if="{{item.price}}" class="sell_price">￥{{item.price}}</span>
+              <span class="market_price">￥{{item.marketPrice}}</span>
+              <span class="sold">已团{{item.soldAmount}}件</span>
+            </view>
+          </view>
+        </view>
+        <navigator wx:if="{{item.groupState==1}}" url="/pages/category/goods/goods?id={{item.goodsId}}">
+          <view class="item">
+            <view class="tc">
+              <image mode="aspectFill" src="{{item.goodsIcon}}"></image>
+            </view>
+            <view class="descr">
+              <view class="name">{{item.goodsName}}</view>
+              <view class="price">
+                <span wx:if="{{item.platformPrice}}">￥{{item.platformPrice}}</span>
+                <span wx:if="{{item.price}}" class="sell_price">￥{{item.price}}</span>
+                <span class="market_price">￥{{item.marketPrice}}</span>
+                <span class="sold">已团{{item.soldAmount}}件</span>
+              </view>
+            </view>
+          </view>
+        </navigator>
+      </view>
+      <view class="clearfix"></view>
+    </view>
+  </view>
+</view>

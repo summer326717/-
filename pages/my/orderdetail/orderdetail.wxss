@@ -1,0 +1,56 @@
+.order_detail {
+    background: #f6f6f6;
+}
+
+.order_detail .top,
+.order_detail .middle {
+    padding: 30rpx;
+    background: #ffffff;
+    line-height: 40rpx;
+}
+
+.order_detail .top {
+    position: relative;
+}
+
+.order_detail .top .red {
+    font-size: 28rpx;
+}
+
+.order_detail .top .time {
+    font-size: 24rpx;
+    color: #808080;
+    position: absolute;
+    right: 30rpx;
+    top: 30rpx;
+}
+
+.order_detail .middle {
+    padding-left: 70rpx;
+    background: url("http://192.168.18.148/images/g_04.png") #ffffff no-repeat 30rpx 50%;
+    background-size: 30rpx 35rpx;
+}
+
+.order_detail .bot_item {
+    color: #808080;
+    line-height: 50rpx;
+    padding: 10rpx 30rpx;
+}
+
+.order_detail .bot_item .right {
+    float: right;
+}
+
+.order_detail .bot_item .black {
+    color: #222222;
+}
+
+.order_detail .bot_item2 {
+    line-height: 50rpx;
+    padding: 10rpx 30rpx;
+    border-top: 30rpx solid #f6f6f6;
+}
+
+.order_detail .btn {
+    border-top: 1px solid #e8e8e8;
+}

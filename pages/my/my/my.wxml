@@ -1,0 +1,147 @@
+<view class="my">
+  <view class="item_top">
+    <image src="{{head_portrait}}"></image>
+    <view class="t_center">
+      <view>{{nick_name}}</view>
+      <view wx:if="{{phone}}">{{phone}}</view>
+      <view wx:if="{{!phone}}">未认证</view>
+    </view>
+    <view class="t_right" bindtap="goToUpdate"></view>
+  </view>
+  <view class="item_bottom">
+    <view class="bo_item">
+      <navigator url="/pages/my/mygroup/mygroup?type=9">
+        <view class="tit">我的团单
+          <span class="more">查看全部</span>
+        </view>
+      </navigator>
+      <view class="ul">
+        <navigator url="/pages/my/mygroup/mygroup?type=1">
+          <view class="li">
+            <view>
+              <image src="http://192.168.18.148/images/m_03.png"></image>
+            </view>
+            <view>拼团中</view>
+            <i class="note" wx:if="{{groupIngNum!=0}}">{{groupIngNum}}</i>
+          </view>
+        </navigator>
+        <navigator url="/pages/my/mygroup/mygroup?type=2">
+          <view class="li">
+            <view>
+              <image src="http://192.168.18.148/images/m_15.png"></image>
+            </view>
+            <view>拼团成功</view>
+            <i class="note" wx:if="{{groupSuccessNum!=0}}">{{groupSuccessNum}}</i>
+          </view>
+        </navigator>
+        <navigator url="/pages/my/mygroup/mygroup?type=0">
+          <view class="li">
+            <view>
+              <image src="http://192.168.18.148/images/m_04.png"></image>
+            </view>
+            <view>拼团失败</view>
+            <i class="note" wx:if="{{groupFailedNum!=0}}">{{groupFailedNum}}</i>
+          </view>
+        </navigator>
+        <view class="clearfix"></view>
+      </view>
+    </view>
+    <view class="bo_item">
+      <navigator url="/pages/my/myorder/myorder?type=9">
+        <view class="tit">我的订单
+          <span class="more">查看全部</span>
+        </view>
+      </navigator>
+      <view class="ul">
+        <navigator url="/pages/my/myorder/myorder?type=2">
+          <view class="li">
+            <view>
+              <image src="http://192.168.18.148/images/m_05.png"></image>
+            </view>
+            <view>待付款</view>
+            <i class="note" wx:if="{{waitingPayNum!=0}}">{{waitingPayNum}}</i>
+          </view>
+        </navigator>
+        <navigator url="/pages/my/myorder/myorder?type=4">
+          <view class="li">
+            <view>
+              <image src="http://192.168.18.148/images/m_06.png"></image>
+            </view>
+            <view>待收货</view>
+            <i class="note" wx:if="{{waitingReceiveNum!=0}}">{{waitingReceiveNum}}</i>
+          </view>
+        </navigator>
+        <navigator url="/pages/my/myorder/myorder?type=5">
+          <view class="li">
+            <view>
+              <image src="http://192.168.18.148/images/m_07.png"></image>
+            </view>
+            <view>待评价</view>
+            <i class="note" wx:if="{{waitingCommentNum!=0}}">{{waitingCommentNum}}</i>
+          </view>
+        </navigator>
+        <navigator url="/pages/my/myorder/myorder?type=7">
+          <view class="li">
+            <view>
+              <image src="http://192.168.18.148/images/m_08.png"></image>
+            </view>
+            <view>退款中</view>
+            <i class="note" wx:if="{{waitingReturnMnyNum!=0}}">{{waitingReturnMnyNum}}</i>
+          </view>
+        </navigator>
+        <view class="clearfix"></view>
+      </view>
+    </view>
+    <view class="bo_item">
+      <view class="tit">我的账户</view>
+      <view class="ul">
+        <navigator url="/pages/my/wallet/wallet">
+          <view class="bor_b li">
+            <view>
+              <image src="http://192.168.18.148/images/m_09.png"></image>
+            </view>
+            <view>钱包</view>
+          </view>
+        </navigator>
+        <navigator url="/pages/my/coupon/coupon">
+          <view class="bor_b li">
+            <view>
+              <image src="http://192.168.18.148/images/m_10.png"></image>
+            </view>
+            <view>优惠券</view>
+          </view>
+        </navigator>
+        <navigator url="/pages/my/collect/collect">
+          <view class="bor_b li">
+            <view>
+              <image src="http://192.168.18.148/images/m_14.png"></image>
+            </view>
+            <view>我的收藏</view>
+          </view>
+        </navigator>
+        <navigator url="/pages/my/addresslist/addresslist">
+          <view class="bor_b li">
+            <view>
+              <image src="http://192.168.18.148/images/m_12.png"></image>
+            </view>
+            <view>收货地址</view>
+          </view>
+        </navigator>
+        <navigator url="/pages/my/servicer/servicer">
+          <view class="bor_b li">
+            <view>
+              <image src="http://192.168.18.148/images/m_11.png"></image>
+            </view>
+            <view>消息</view>
+            <i class="note" wx:if="{{waitingViewChatNum!=0}}">{{waitingViewChatNum}}</i>
+          </view>
+        </navigator>
+        <!--<li>
+            <p><img src="../../assets/images/m_13.png"></p>
+            <p>设置</p>
+          </li>-->
+        <view class="clearfix"></view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,80 @@
+.g_coupon .item2 {
+    background: url("http://192.168.18.148/images/coupon2.png") no-repeat!important;
+    background-size: cover!important;
+}
+
+.g_coupon .box {
+    overflow: hidden;
+    margin: 10rpx 20rpx;
+    background: url("http://192.168.18.148/images/coupon.png") no-repeat;
+    background-size: cover;
+}
+
+.g_coupon .box .left {
+    color: #fff;
+    width: 29%;
+    float: left;
+    height: 130rpx;
+    text-align: center;
+}
+
+.g_coupon .box .left .money {
+    font-size: 42rpx;
+    margin-top: 20%;
+}
+
+.g_coupon .box .left .rule {
+    font-size: 22rpx;
+}
+
+.g_coupon .box .right {
+    float: right;
+    width: 71%;
+}
+
+.g_coupon .box .right_text {
+    float: left;
+    width: 70%;
+    text-align: center;
+}
+
+.g_coupon .box .right_text view {
+    color: #fff;
+}
+
+.g_coupon .box .right_text .address {
+    font-size: 36rpx;
+    margin-top: 18rpx;
+    overflow: hidden;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.g_coupon .box .right_text .time {
+    margin-top: 15rpx;
+    font-size: 24rpx;
+}
+
+.g_coupon .box .item3 {
+    display: none;
+}
+
+.g_coupon .box .right_btn {
+    width: 30%;
+    float: right;
+    height: 130rpx;
+    text-align: center;
+}
+
+.g_coupon .box .right_btn button {
+    background: #fff;
+    color: #ec263b;
+    border-radius: 10rpx;
+    line-height: 60rpx;
+    margin-top: 40rpx;
+    width: 150rpx;
+    margin-left: -20rpx;
+}

@@ -1,0 +1,38 @@
+.a_list {
+    background: #ffffff;
+}
+
+.a_list .ul {
+    padding: 0 30rpx;
+}
+
+.a_list .li {
+    padding: 30rpx 0;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.a_list .li .top .icon {
+    vertical-align: middle;
+    height: 70rpx;
+    width: 70rpx;
+    margin-right: 20rpx;
+    border-radius: 100%;
+}
+
+.a_list .li .top .time {
+    float: right;
+    color: #808080;
+    font-size: 20rpx;
+    margin-top: 25rpx;
+}
+
+.a_list .li .des {
+    padding-top: 20rpx;
+    line-height: 35rpx;
+}
+
+.a_list .li .bot image {
+    width: 150rpx;
+    height: 150rpx;
+    margin-right: 20rpx;
+}

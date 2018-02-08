@@ -1,0 +1,78 @@
+<view class="index">
+  <swiper indicator-dots="true" autoplay="true" interval="3000">
+    <block wx:for="{{banner_list}}" wx:key="{{index}}">
+      <swiper-item>
+        <block wx:if="{{goodsId=='~'}}">
+          <image mode="aspectFill" src="{{item.imgUrl}}" class="slide-image"></image>
+        </block>
+        <block wx:else>
+          <image mode="aspectFill" src="{{item.imgUrl}}" class="slide-image"></image>
+          <!--web-view指向的网页链接需要在小程序管理后台设置白名单-->
+          <!--<web-view src="{{item.goodsId}}">
+            <image src="{{item.imgUrl}}" class="slide-image"></image>
+          </web-view>-->
+        </block>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="loadmore">
+    <view class="menu">
+      <view class="li">
+        <navigator url="/pages/index/getcoupon">
+          <view>
+            <image src="http://192.168.18.148/images/menu_01.png"></image>
+          </view>
+          <view>领券</view>
+        </navigator>
+      </view>
+      <view class="li">
+        <navigator url="/pages/index/hotsell">
+          <view>
+            <image src="http://192.168.18.148/images/menu_02.png"></image>
+          </view>
+          <view>热销</view>
+        </navigator>
+      </view>
+      <view class="li">
+        <navigator url="/pages/my/mygroup/mygroup">
+          <view>
+            <image src="http://192.168.18.148/images/menu_03.png"></image>
+          </view>
+          <view>团单</view>
+        </navigator>
+      </view>
+      <view class="li">
+        <navigator url="/pages/my/collect/collect">
+          <view>
+            <image src="http://192.168.18.148/images/menu_04.png"></image>
+          </view>
+          <view>收藏</view>
+        </navigator>
+      </view>
+    </view>
+    <view class="list">
+      <view wx:for="{{data_list}}" wx:key="{{index}}" class="item">
+        <navigator url="/pages/category/goods/goods?id={{item.goodsId}}">
+          <view class="img">
+            <image mode="aspectFill" src="{{item.goodsIcon}}"></image>
+          </view>
+          <view class="bottom">
+            <view class="elli">{{item.goodsName}}</view>
+            <view class="money">
+              <span>￥{{item.platformPrice}}</span>
+              <span class="gray">￥{{item.marketPrice}}</span>
+              <span class="m_right">
+                <span>已团{{item.soldAmount}}件</span>
+                <span class="to_group">去拼团</span>
+              </span>
+            </view>
+          </view>
+        </navigator>
+      </view>
+      <view class="listnodata" v-if="is_to_bottom">主人，已经到底啦</view>
+    </view>
+    <view class="no_data" wx:if="{{data_list==''}}">
+      <image src="http://192.168.18.148/images/no_data.png"></image>
+    </view>
+  </view>
+</view>

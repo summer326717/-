@@ -1,0 +1,7 @@
+<template name="selectnum">
+  <view class="selectnum">
+    <button bindtap="jian">-</button>
+    <button disabled="disabled">{{number}}=={{num}}</button>
+    <button bindtap="jia">+</button>
+  </view>
+</template>

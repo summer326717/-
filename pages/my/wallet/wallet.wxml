@@ -1,0 +1,26 @@
+<view class="wallet">
+  <view class="top">
+    <view>账户余额：</view>
+    <view class="num">￥{{balance}}</view>
+    <button class="btn" bindtap="recharge">充值</button>
+  </view>
+  <view class="bottom">
+    <view class="li" wx:for="{{wallet_list}}" wx:key="{{index}}">
+      <view>
+        <span wx:if="{{item.change_mode==1}}">普通订单支付</span>
+        <span wx:if="{{item.change_mode==2}}">团购订单支付</span>
+        <span wx:if="{{item.change_mode==3}}">加钱购支付</span>
+        <span wx:if="{{item.change_mode==4}}">余额充值</span>
+        <span wx:if="{{item.change_mode==5}}">退款</span>
+        <span class="fr gray">{{item.created_time}}</span>
+      </view>
+      <view>
+        <span>余额：
+          <span class="orange">{{item.change_back_amount}}</span>
+        </span>
+        <span wx:if="{{item.pay_type==1}}" class="fr red">+{{item.change_amount}}</span>
+        <span wx:if="{{item.pay_type==2}}" class="fr red">-{{item.change_amount}}</span>
+      </view>
+    </view>
+  </view>
+</view>

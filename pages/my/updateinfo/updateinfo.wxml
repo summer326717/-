@@ -1,0 +1,21 @@
+<div class="update_info">
+  <div class="item">
+    <span>头像</span>
+    <span class="right">
+    </span>
+  </div>
+  <div class="item">
+    <span>昵称</span>
+  </div>
+  <div class="item">
+    <span>性别</span>
+  </div>
+  <div class="item">
+    <span>地区</span>
+    <span class="right" id="nowValue">{{province}} {{city}}</span>
+  </div>
+  <div class="item">
+    <span>生日</span>
+    <span class="right">{{birthday}}</span>
+  </div>
+</div>

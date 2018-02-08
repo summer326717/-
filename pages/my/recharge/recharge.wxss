@@ -1,0 +1,39 @@
+.recharge {
+    padding: 30rpx;
+    background: #f6f6f6;
+}
+
+.recharge .box {
+    padding: 60rpx 30rpx;
+    border-radius: 5rpx;
+    background: #ffffff;
+}
+
+.recharge .box .pr {
+    position: relative;
+    font-size: 48rpx;
+}
+
+.recharge .box .i {
+    position: absolute;
+    top: 100rpx;
+    left: 0;
+}
+
+.recharge .box .ipt {
+    width: 100%;
+    padding: 20rpx 0;
+    margin: 80rpx 0;
+    font-size: 48rpx;
+    padding-left: 60rpx;
+    border-bottom: 1px solid #efebeb;
+}
+
+.recharge .box .btn {
+    color: #ffffff;
+    height: 88rpx;
+    font-size: 32rpx;
+    width: 100%;
+    border-radius: 5rpx;
+    background: #ee1529;
+}

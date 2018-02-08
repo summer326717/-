@@ -1,0 +1,143 @@
+.pay {
+    min-height: 100%;
+    background: #f6f6f6;
+}
+
+.pay .top {
+    padding: 20rpx 40rpx 20rpx 70rpx;
+    line-height: 35rpx;
+    background: url("http://192.168.18.148/images/g_04.png") #ffffff no-repeat 30rpx 50%;
+    background-size: 30rpx 35rpx;
+    position: relative;
+}
+
+.pay .top .name {
+    font-size: 28rpx;
+}
+
+.pay .top .i {
+    width: 10rpx;
+    height: 18rpx;
+    position: absolute;
+    right: 30rpx;
+    top: 40%;
+    background: url("http://192.168.18.148/images/g_05.png") no-repeat;
+    background-size: 10rpx 18rpx;
+}
+
+.pay .coupon {
+    margin-top: 30rpx;
+    overflow: hidden;
+    padding: 30rpx 30rpx 30rpx 60rpx;
+    background: #fff;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.pay .coupon .cou {
+    float: left;
+}
+
+.pay .coupon .money {
+    float: right;
+}
+
+.pay .rule {
+    background: #ffffff;
+}
+
+.pay .rule .tit {
+    padding: 20rpx 30rpx;
+    border-bottom: 1px solid #f1f1f1;
+    padding-left: 60rpx;
+    background: url("http://192.168.18.148/images/g_03.png") no-repeat 30rpx 50%;
+    background-size: 24rpx 24rpx;
+}
+
+.pay .rule .ul {
+    padding: 20rpx 30rpx;
+}
+
+.pay .rule .ul view {
+    display: flex;
+    flex-flow: row wrap;
+    line-height: 40rpx;
+}
+
+.pay .rule .ul span {
+    width: 33.3%;
+    text-align: center;
+}
+
+.pay .middle {
+    background: #ffffff;
+    margin-top: 20rpx;
+    padding: 10rpx 30rpx;
+    display: flex;
+    line-height: 32rpx;
+}
+
+.pay .middle image {
+    display: block;
+    width: 160rpx;
+    height: 160rpx;
+    border: 1px solid #eaeaea;
+}
+
+.pay .middle .right {
+    padding-left: 30rpx;
+}
+
+.pay .middle .right .gray {
+    color: #808080;
+    font-size: 20rpx;
+}
+
+.pay .bottom {
+    background: #ffffff;
+    width: 100%;
+    display: flex;
+    border-top: 1px solid #e8e8e8;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.pay .bottom .left {
+    color: #808080;
+    flex: 1;
+    align-items: center;
+    display: flex;
+    padding-left: 20rpx;
+}
+
+.pay .bottom .left .price {
+    color: #ee1529;
+    margin-right: 20rpx;
+}
+
+.pay .bottom .btn_pay {
+    display: flex;
+    width: 250rpx;
+    color: #ffffff;
+    justify-content: center;
+    line-height: 90rpx;
+    background: #ee1529;
+}
+
+.pay .paied {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.pay .paied p {
+    color: #4a4a4a;
+    font-size: 20px;
+    padding: 40px 0;
+}
+
+.pay .paied .btn {
+    color: #ee1529;
+    padding: 10px 10px;
+    border: 1px solid #ee1529;
+    border-radius: 5px
+}

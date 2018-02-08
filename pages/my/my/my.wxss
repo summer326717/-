@@ -1,0 +1,103 @@
+.my {
+    background: #f6f6f6;
+}
+
+.my .bor_b {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.my .item_top {
+    background: #e02e24;
+    padding: 30rpx 30px 100rpx 50rpx;
+    position: relative;
+}
+
+.my .item_top image {
+    width: 106rpx;
+    height: 106rpx;
+    float: left;
+    margin-right: 40rpx;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+}
+
+.my .item_top .t_center {
+    color: #ffffff;
+    line-height: 55rpx;
+}
+
+.my .item_top .t_right {
+    width: 30rpx;
+    height: 28rpx;
+    background: url("http://192.168.18.148/images/m_01.png");
+    background-size: 100% 100%;
+    position: absolute;
+    top: 80rpx;
+    right: 80rpx;
+}
+
+.my .item_bottom {
+    margin-top: -70rpx;
+    padding-bottom: 50rpx;
+    position: relative;
+}
+
+.my .item_bottom .bo_item {
+    background: #ffffff;
+    border-radius: 10rpx;
+    margin: 15rpx 30rpx;
+    border: 1px solid #f0f0f0;
+}
+
+.my .item_bottom .bo_item .tit {
+    color: #222222;
+    padding: 25rpx;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.my .item_bottom .bo_item .tit .more {
+    color: #808080;
+    float: right;
+    padding-right: 20rpx;
+    background: url("http://192.168.18.148/images/m_02.png") no-repeat 100% 50%;
+    background-size: 12rpx 22rpx;
+}
+
+.my .item_bottom .bo_item .ul {
+    padding: 0 30rpx;
+}
+
+.my .item_bottom .bo_item .ul .li {
+    color: #808080;
+    width: 25%;
+    float: left;
+    text-align: center;
+    padding: 30rpx 0;
+    position: relative;
+}
+
+.my .item_bottom .bo_item .ul .li .note {
+    color: #ee1529;
+    height: 26rpx;
+    line-height: 26rpx;
+    width: 26rpx;
+    border: 1px solid #ee1529;
+    background: #ffffff;
+    border-radius: 100%;
+    position: absolute;
+    right: 30rpx;
+    top: 30rpx;
+    font-size: 20rpx;
+    display: inline-block;
+}
+
+.my .item_bottom .bo_item .ul image {
+    height: 40rpx;
+    width: 50rpx;
+}
+
+.my .item_bottom .bo_item .ul .clearfix {
+    float: none;
+    clear: both;
+    padding: 0;
+}

@@ -1,0 +1,22 @@
+<view class="return">
+  <view class="top">
+    <view>
+      <image src="{{img_url}}"></image>
+    </view>
+    <view class="right">
+      <view>{{goods_name}}</view>
+      <view>共{{count}}件商品 订单总额：￥{{amount}}</view>
+    </view>
+  </view>
+  <view class="bottom">
+    <textarea class="ipt" type="text" placeholder="请描述问题"></textarea>
+  </view>
+  <view class="upload">
+    <image wx:for="{{imgUrl}}" wx:key="{{index}}" src="{{item.imgUrl}}"></image>
+    <image bindtap="upload" src="http://192.168.18.148/images/upload.png"></image>
+  </view>
+  <view class="info">提交之后，客服人员会与您电话沟通，请保持手机畅通</view>
+  <view>
+    <button class="sub_btn" bindtap="returnGoods">提交</button>
+  </view>
+</view>

@@ -1,0 +1,44 @@
+<view class="search">
+  <view class="s_list">
+    <view class="ul">
+      <view class="li" wx:for="{{data_list}}" wx:key="index">
+        <view wx:if="{{item.groupState!=1}}" class="item" bindtap="goodsDetail">
+          <view class="tc">
+            <image src="{{item.goodsIcon}}" mode="aspectFill"></image>
+          </view>
+          <view class="descr">
+            <view class="name">{{item.goodsName}}</view>
+            <view class="price">
+              <span wx:if="{{item.supplyPrice}}">￥{{item.supplyPrice}}</span>
+              <span wx:if="{{item.price}}" class="sell_price">￥{{item.price}}</span>
+              <span class="market_price">￥{{item.marketPrice}}</span>
+              <span class="sold">已团{{item.soldAmount}}件</span>
+            </view>
+          </view>
+        </view>
+        <block wx:if="{{item.groupState==1}}">
+          <navigator url="../goods/goods?id={{item.goodsId}}">
+            <view class="item">
+              <view class="tc">
+                <image src="{{item.goodsIcon}}" mode="aspectFill"></image>
+              </view>
+              <view class="descr">
+                <view class="name">{{item.goodsName}}</view>
+                <view class="price">
+                  <span v-if="{{item.supplyPrice}}">￥{{item.supplyPrice}}</span>
+                  <span v-if="{{item.price}}" class="sell_price">￥{{item.price}}</span>
+                  <span class="market_price">￥{{item.marketPrice}}</span>
+                  <span class="sold">已团{{item.soldAmount}}件</span>
+                </view>
+              </view>
+            </view>
+          </navigator>
+        </block>
+      </view>
+      <view class="clearfix"></view>
+    </view>
+    <view class="no_data" wx:if="{{search_data==''}}">
+      <image src="http://192.168.18.148/images/no_data.png"></image>
+    </view>
+  </view>
+</view>

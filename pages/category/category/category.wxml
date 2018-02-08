@@ -1,0 +1,27 @@
+<view class="category">
+  <view class="search">
+    <input class="s_ipt" readonly placeholder="" bindtap='toSearch' />
+    <view class='icon'></view>
+  </view>
+  <view class="item_list">
+    <view class="i_left">
+      <view class="menu {{menu_id=='~'?'active':''}}" data-typeId='~' data-typeChinese="全部" bindtap="changeSecondMenu">全部</view>
+      <view wx:for="{{menu_list}}" wx:key='{{index}}' class="menu {{menu_id==item.typeId?'active':''}}" v-bind:key="item.typeId"
+        data-typeId='{{item.typeId}}' data-typeChinese="{{item.typeChinese}}" bindtap="changeSecondMenu">{{item.typeChinese}}</view>
+    </view>
+    <view class="i_right">
+      <view class="tit"></view>
+      <view class='ul'>
+        <view class='li' wx:for="{{second_menu_list}}" wx:key='{{index}}' data-typeId='{{item.typeId}}' data-typeChinese="{{item.typeChinese}}"
+          bindtap="secondSearch">
+          <view>
+            <image wx:if="{{!item.typeIcon}}" src="http://192.168.18.148/images/fail.png"></image>
+            <image wx:if="item.typeIcon" src="{{item.typeIcon}}"></image>
+          </view>
+          <view class="name">{{item.typeChinese}}</view>
+        </view>
+        <view class="clearfix"></view>
+      </view>
+    </view>
+  </view>
+</view>

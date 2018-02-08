@@ -1,0 +1,44 @@
+.add {
+  height: 100%;
+  background: #f6f6f6;
+}
+
+.add .bor {
+  background-color: #fff;
+  border-bottom: 1px solid #f5f5f5;
+  padding: 0 30rpx;
+  line-height: 88rpx;
+  display: flex;
+}
+
+.add .bor .add_s {
+  width: 70rpx;
+}
+
+.add .bor .ipt {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.add .bor .add_i {
+  width: 100%;
+}
+
+.add .bor .m_d {
+  justify-content: flex-end;
+}
+
+.add .bor .save {
+  color: #fff;
+  font-size: 28rpx;
+  width: 100%;
+  background: #ee1529;
+  border-radius: 10rpx;
+  line-height: 88rpx;
+  margin: 340rpx 0 30rpx 0;
+}
+
+.add .bor .i_icon {
+  background: url("http://192.168.18.148/images/g_05.png") no-repeat 100% 50%;
+}

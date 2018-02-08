@@ -1,0 +1,275 @@
+.goods {
+    background: #f6f6f6;
+}
+
+.goods .top {
+    background: #fff;
+}
+
+.goods .top .banner {
+    height: 410rpx;
+    background: #f5f5f5;
+    text-align: center;
+    position: relative;
+}
+
+.goods .top .banner swiper {
+    width: 100%;
+}
+
+.goods .top .banner image {
+    height: 100%;
+    width: 100%;
+}
+
+.goods .top .banner .setime {
+    width: 100%;
+    color: #ee1529;
+    position: absolute;
+    bottom: 0rpx;
+    right: 0rpx;
+    text-align: left;
+    padding: 20rpx 0 20rpx 20rpx;
+    background: rgba(225, 225, 225, 0.6);
+}
+
+.goods .top .banner .setime::before {
+    content: "距离拼团结束还有 ";
+}
+
+.goods .top .banner img {
+    height: 410rpx;
+}
+
+.goods .top .desc {
+    padding: 10rpx 30rpx;
+    line-height: 40rpx;
+}
+
+.goods .top .desc .price {
+    position: relative;
+}
+
+.goods .top .desc .price .sell_price {
+    color: #ee1529;
+}
+
+.goods .top .desc .price .market_price,
+.goods .top .desc .price .sold {
+    color: #808080;
+}
+
+.goods .top .desc .price .market_price {
+    text-decoration: line-through;
+}
+
+.goods .top .desc .price .sold {
+    float: right;
+}
+
+.goods .top .desc .detail {
+    color: #808080;
+    font-size: 22rpx;
+}
+
+.goods .middle {
+    margin-top: 20rpx;
+    background: #fff;
+}
+
+.goods .middle .tit {
+    padding: 20rpx 30rpx;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.goods .middle .tit .t_rule {
+    float: right;
+    font-size: 22rpx;
+    padding-left: 40rpx;
+    background: url("http://192.168.18.148/images/g_09.png") no-repeat 0 50%;
+    background-size: contain;
+}
+
+.goods .middle .join {
+    display: flex;
+    padding: 15rpx 30rpx;
+    line-height: 40rpx;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.goods .middle .join .item {
+    align-items: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    display: flex;
+}
+
+.goods .middle .join .item_c {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-right: 15rpx;
+    text-align: right;
+}
+
+.goods .middle .join .item_c .gray {
+    color: #808080;
+    font-size: 22rpx;
+}
+
+.goods .middle .join .head_icon {
+    height: 60rpx;
+    width: 60rpx;
+    border-radius: 50%;
+    margin-right: 8rpx;
+    border: 1px solid #eee;
+}
+
+.goods .middle .join .btn_join {
+    color: #ee1529;
+    width: 80rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    border: 1px solid #ee1529;
+    border-radius: 10rpx;
+}
+
+.goods .middle .img_list image {
+    width: 100%;
+    display: block;
+}
+
+.goods .assess .ul {
+    padding: 0 30rpx;
+}
+
+.goods .assess .ul .li {
+    padding-top: 15rpx;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.goods .assess .more {
+    float: right;
+    color: #4e4e4e;
+}
+
+.goods .assess .top {
+    display: flex;
+    align-items: center;
+    font-size: 22rpx;
+}
+
+.goods .assess .top span {
+    flex: 2;
+}
+
+.goods .assess .top image {
+    height: 60rpx;
+    width: 60rpx;
+    border-radius: 100%;
+    border: 1px solid #eee;
+    margin-right: 20rpx;
+}
+
+.goods .assess .top .time {
+    flex: 1;
+    color: #808080;
+    font-size: 20rpx;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.goods .assess .des {
+    color: #565656;
+    font-size: 22rpx;
+    padding: 15rpx 0;
+    line-height: 30rpx;
+}
+
+.goods .btn_list {
+    display: flex;
+    border-top: 1px solid #eee;
+    background: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.goods .btn_list button {
+    border-radius: 0;
+    flex: 1;
+    line-height: 90rpx;
+}
+
+.goods .btn_list .collect_btn {
+    color: #808080;
+    padding-left: 20rpx;
+    border-right: 1px solid #e4e7f0;
+    border-left: 1px solid #e4e7f0;
+    background: url("http://192.168.18.148/images/g_01.png") no-repeat 10% 48%;
+    background-size: 30rpx 30rpx;
+}
+
+.goods .btn_list .c_collect_btn {
+    color: #808080;
+    padding-left: 20rpx;
+    border-right: 1px solid #e4e7f0;
+    border-left: 1px solid #e4e7f0;
+    background: url("http://192.168.18.148/images/g_08.png") no-repeat 10% 48%;
+    background-size: 30rpx 30rpx;
+}
+
+.goods .btn_list .contact_btn {
+    color: #808080;
+    padding-left: 40rpx;
+    background: url("http://192.168.18.148/images/g_02.png") no-repeat 10% 48%;
+    background-size: 30rpx 30rpx;
+}
+
+.goods .btn_list .start_btn {
+    color: #fff;
+    background: #ee1529;
+}
+
+.goods .rule_bottom {
+    background: #fff;
+    padding-bottom: 30rpx;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.goods .rule_bottom .tit {
+    padding: 20rpx 30rpx;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.goods .rule_bottom .ul {
+    padding: 20rpx 30rpx;
+}
+
+.goods .rule_bottom .ul view {
+    display: flex;
+    flex-flow: row wrap;
+    line-height: 40rpx;
+}
+
+.goods .rule_bottom .ul view span {
+    width: 33.3%;
+    text-align: center;
+}
+
+.goods .over_time {
+    position: absolute;
+    right: 120rpx;
+    top: 240rpx;
+}
+
+.goods .over_time image {
+    width: 228rpx;
+    height: 228rpx;
+}

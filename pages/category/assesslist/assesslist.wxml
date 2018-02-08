@@ -1,0 +1,18 @@
+<view class="a_list">
+  <view class="ul">
+    <view class="li" wx:for="{{data_list}}" wx:key="{{index}}">
+      <view class="top">
+        <image mode="aspectFill" class="icon" src="{{item.goodsCommentH.buyersIcon}}" alt=""></image>
+        <span>{{item.goodsCommentH.buyersName}}</span>
+        <span class="time">{{item.goodsCommentH.createTime}}</span>
+      </view>
+      <view class="des">{{item.goodsCommentH.goodsComment}}</view>
+      <view class="bot">
+        <image mode="aspectFill" wx:for="{{item.goodsCommentBList}}" wx:key="{{index}}" src="{{item.imgUrl}}"></image>
+      </view>
+    </view>
+  </view>
+  <view class="no_data" wx:if="{{data_list==''}}">
+    <image src="http://192.168.18.148/images/no_data.png"></image>
+  </view>
+</view>

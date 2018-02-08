@@ -1,0 +1,26 @@
+<view class="search">
+  <view class="top">
+    <input class="s_ipt" type="text" value="{{search_word}}" focus confirm-type="search" placeholder="请输入搜索的商品" />
+    <button class="s_btn" bindtap="searchMethod">搜索</button>
+    <view class="icon"></view>
+  </view>
+  <view v-if="!is_search_result">
+    <view class="his">
+      <view class="tit">历史搜索
+        <span class="del" bindtap="clear_history"></span>
+      </view>
+      <view wx:if="{{his_data==''}}" class="s_span">暂无历史搜索</view>
+      <view wx:if="{{his_data!=''}}" class="s_span">
+        <span wx:for="{{his_data}}" wx:key="{{index}}" bindtap="hotSearch">{{item}}</span>
+      </view>
+    </view>
+    <!--<view class="hot hide">
+      <view class="tit">热门搜索
+        <span class="cha" bindtap="changeHot">换一换</span>
+      </view>
+      <view class="s_span">
+        <span wx:for="{{hot_data}}" wx:key="{{index}}" bindtap="hotSearch">{{item.txt}}</span>
+      </view>
+    </view>-->
+  </view>
+</view>

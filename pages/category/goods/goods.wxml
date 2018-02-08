@@ -1,0 +1,119 @@
+<view class="goods">
+  <view class="top">
+    <view class="banner">
+      <swiper indicator-dots="true" autoplay="true" interval="3000">
+        <block wx:for="{{goodsImgList}}" wx:key="{{index}}">
+          <swiper-item>
+            <image src="{{item.thumbnailAddress}}" class="slide-image" mode="aspectFill" />
+          </swiper-item>
+        </block>
+      </swiper>
+      <!--<settime class="setime" :end_time="time"></settime>-->
+    </view>
+    <view class="desc" wx:if="{{goodsIntroduce!=null}}">
+      <view class="price">
+        <span class="sell_price">￥{{goodsIntroduce.price}}</span>
+        <span class="market_price">￥{{goodsIntroduce.marketPrice}}</span>
+        <span class="sold">已团{{goodsIntroduce.soldAmount}}件</span>
+      </view>
+      <view class="">{{goodsIntroduce.goodsName}}</view>
+      <view class="detail">{{goodsIntroduce.goodsIntroduce}}</view>
+    </view>
+    <view wx:if="{{is_over_time}}" class="over_time">
+      <image src="http://192.168.18.148/images/over_time.png"></image>
+    </view>
+  </view>
+  <view class="middle">
+    <view class="tit">开团中
+      <span class="t_rule" bindtap="openRule">拼团规则</span>
+    </view>
+    <view class="join" wx:for="{{goodsGroups}}" wx:key="{{index}}">
+      <view class="item">
+        <image class="head_icon" wx:for="{{item.groupPeopleList}}" wx:key="{{index}}" wx:if="{{index<4}}" src="{{item.buyers_icon}}"></image>
+      </view>
+      <view class="item_c">
+        <view class="gray">已参团{{item.joinNum}}个人</view>
+      </view>
+      <view class="item">
+        <button class="btn_join" data-groupInfoId="{{item.groupInfoId}}" bindtap="lookGroup">查看</button>
+      </view>
+    </view>
+  </view>
+  <view class="middle assess">
+    <view class="tit">商品评价（{{commentMap.commentTotal}}）
+      <span class="more" bindtap="lookMore" wx:if="{{commentMap.commentTotal!=0}}">查看全部 ></span>
+    </view>
+    <view class="ul" wx:if="{{commentMap.commentTotal!=0}}">
+      <view class="li" wx:for="{{commentMap.commentList}}" wx:key="{{index}}">
+        <view class="top">
+          <image src="{{item.buyersIcon}}"></image>
+          <span>{{item.buyersName}}</span>
+          <span class="time">{{item.createTime}}</span>
+        </view>
+        <view class="des">{{item.goodsComment}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="middle">
+    <view class="tit">商品介绍</view>
+    <view class="img_list" wx:if="{{groupsImg!=''}}">
+      <image mode="aspectFill" wx:for="{{groupsImg}}" wx:key="{{index}}" src="{{item.urlAddress}}"></image>
+    </view>
+  </view>
+  <view class="btn_list" wx:if="{{!is_over_time}}">
+    <button bindtap="jumpIndex" style="color: #808080;">首页</button>
+    <button wx:if="{{collectionState==1}}" class="c_collect_btn" bindtap="cancelCollectGoods">取消收藏</button>
+    <button wx:if="{{collectionState==0}}" class="collect_btn" bindtap="collectGoods">收藏</button>
+    <button class="contact_btn" bindtap="contactKefu">联系客服</button>
+    <button class="start_btn" bindtap="joinGroup">一键开团</button>
+  </view>
+  <view class="dialogbg" wx:if="{{is_show_select}}" bindtap="closeSelected"></view>
+  <view class="buy_selected" wx:if="{{is_show_select}}">
+    <view class="se_top">
+      <image mode="aspectFill" src="{{goodsIntroduce.goodsIcon}}"></image>
+      <view class="price">￥{{goodsIntroduce.price}}</view>
+      <view class="num">库存{{stockAmount}}件</view>
+      <view class="num">请选择颜色尺码</view>
+      <span class="close" bindtap="closeSelected"></span>
+    </view>
+    <view class="se_middle">
+      <view class="item_tit">规格</view>
+      <view class="item">
+        <span wx:for="{{goods_specifications}}" class="{{item.specificationsId==specificationsId?'active':''}}" wx:key="{{index}}"
+          data-specificationsId="{{item.specificationsId}}" data-stockAmount="{{item.stockAmount}}" bindtap="selectColor">{{item.magnitude}}</span>
+      </view>
+      <view class="item_tit">
+        <span>购买数量</span>
+        <view class="buy_num">
+          <button class="jian" bindtap="jian">-</button>
+          <button class="num">{{spec_num}}</button>
+          <button class="add" bindtap="jia">+</button>
+        </view>
+        <!--<selectnum :max='stockAmount' @num="select_num"></selectnum>-->
+      </view>
+      <view>
+        <button class="submit" bindtap="subBuyInfo">确定</button>
+      </view>
+    </view>
+  </view>
+  <view class="dialogbg" wx:if="{{is_open_rule}}" bindtap="openRule"></view>
+  <view class="rule_bottom" wx:if="{{is_open_rule}}">
+    <view class="tit">拼团规则</view>
+    <view class="ul">
+      <view>
+        <span>人数</span>
+        <span>优惠</span>
+        <span>折后价</span>
+      </view>
+      <view wx:for="{{groupRule}}" wx:key="{{index}}">
+        <span>{{item.downNum}}-{{item.upNum}}</span>
+        <span>￥{{item.discountPrice}}</span>
+        <span>￥{{item.salePrice}}</span>
+      </view>
+    </view>
+    <view class="tit">拼团说明</view>
+    <view class="ul">
+      <p>先按原价预支付，待拼团时间截止后，根据参团人数对应的价格，返还差价到个人钱包</p>
+    </view>
+  </view>
+</view>

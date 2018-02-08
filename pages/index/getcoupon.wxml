@@ -1,0 +1,22 @@
+<view class="g_coupon">
+  <view class="item" wx:for="{{data_list}}" wx:key="{{index}}">
+    <view class="box {{item.groupState==0&&item.state==0?'item2':''}}" wx:if="{{item.restNum>0}}">
+      <view class="left">
+        <view class="money">￥{{item.discountAmount/100}}</view>
+        <view class="rule">满{{(item.rangeCondition)/100}}使用</view>
+      </view>
+      <view class="right">
+        <view class="right_text">
+          <view class="address">{{item.rangeName}}</view>
+          <view class="time">{{item.startTime}}~{{item.endTime}}</view>
+        </view>
+        <view class="right_btn" wx:if="{{item.state==1}}">
+          <button data-i="{{index}}" bindtap="getCoupon">领券</button>
+        </view>
+        <view class="right_btn {{item.state==0&&item.groupState==0&&item.restNum>0?'hide':''}}" wx:if="{{item.state==0}}" data-rangeId="{{item.rangeId}}" data-supplierId="{{item.supplierId}}" bindtap="toUse">
+          <button>立即使用</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

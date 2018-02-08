@@ -1,0 +1,81 @@
+<view class="joingroup">
+  <navigator url="/pages/category/goods/goods?id={{groupsGoods.goodsId}}">
+    <view class="top">
+      <view class="top_l">
+        <image src="{{groupsGoods.goodsIcon}}" mode="aspectFill"></image>
+      </view>
+      <view class="top_r">
+        <view class="elli">{{groupsGoods.goodsName}}</view>
+        <view class="detail elli">{{groupsGoods.goodsIntroduce}}</view>
+        <view class="sold">已团{{groupsGoods.soldAmount}}件</view>
+        <view>
+          <span class="sell_price">￥{{groupsGoods.price}}</span>
+          <span class="market_price">￥{{groupsGoods.marketPrice}}</span>
+        </view>
+        <view class="detail">结算时间
+          <!--<settime class="setime" :end_time="time"></settime>-->
+        </view>
+      </view>
+    </view>
+  </navigator>
+  <view class="middle">
+    <view class="tit">参团人员</view>
+    <view class="g_mem_list">
+      <span class="member" wx:for="{{groupItem.peoples}}" wx:key="{{index}}">
+        <image class="{{item.groupIsLeader=='Y'?'tuanzhang':''}}" src="{{item.buyers_icon}}"></image>
+        <i wx:if='{{item.groupIsLeader=="Y"}}'>团长</i>
+      </span>
+    </view>
+    <view class="g_mem_list">
+      <button class="btn_join" bindtap="openOrCloseDialog">一键参团</button>
+    </view>
+  </view>
+  <view class="bottom">
+    <view class="tit">拼团规则</view>
+    <view class="ul">
+      <view>
+        <span>人数</span>
+        <span>优惠</span>
+        <span>折后价</span>
+      </view>
+      <view wx:for="{{groupItem.rules}}" wx:key="{{index}}">
+        <span>{{item.downNum}}-{{item.upNum}}</span>
+        <span>￥{{item.discountPrice}}</span>
+        <span>￥{{item.salePrice}}</span>
+      </view>
+    </view>
+    <view class="tit">拼团说明</view>
+    <view class="ul">
+      <view>先按原价预支付，待拼团时间截止后，根据参团人数对应的价格，返还差价到个人钱包</view>
+    </view>
+  </view>
+  <view class="dialogbg" wx:if="{{is_show_select}}" bindtap="openOrCloseDialog"></view>
+  <view class="buy_selected" wx:if="{{is_show_select}}">
+    <view class="se_top">
+      <image mode="aspectFill" src="{{groupsGoods.goodsIcon}}"></image>
+      <view class="price">￥{{groupsGoods.price}}</view>
+      <view class="num">库存{{groupsGoods.stockAmount}}件</view>
+      <view class="num">请选择颜色尺码</view>
+      <span class="close" bindtap="openOrCloseDialog"></span>
+    </view>
+    <view class="se_middle">
+      <view class="item_tit">规格</view>
+      <view class="item">
+        <span class="{{item.specificationsId==specificationsId?'active':''}}" wx:for="{{goods_specifications}}" wx:key="{{index}}"
+          data-specificationsId="{{item.specificationsId}}" data-stockAmount="{{item.stockAmount}}" bindtap="selectColor">{{item.magnitude}}</span>
+      </view>
+      <view class="item_tit">
+        <span>购买数量</span>
+        <view class="buy_num">
+          <button class="jian" bindtap="jian">-</button>
+          <button class="num">{{spec_num}}</button>
+          <button class="add" bindtap="jia">+</button>
+        </view>
+        <!--<selectnum :max='stockAmount' @num="select_num"></selectnum>-->
+      </view>
+      <view>
+        <button class="submit" bindtap="toJoin">确定</button>
+      </view>
+    </view>
+  </view>
+</view>

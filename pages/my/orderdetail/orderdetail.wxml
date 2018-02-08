@@ -1,0 +1,75 @@
+<view class="order_detail">
+  <view class="top" wx:if="{{orderInfo.state==4}}" bindtap="toLog">
+    <view class="red">待收货</view>
+    <view wx:if="{{lastest_log_info==''}}">暂无物流信息</view>
+    <view wx:else>{{lastest_log_info}}</view>
+    <!--<span class="time">{{orderInfo.buy_time}}</span>-->
+  </view>
+  <view class="middle" bindtap="selectAddr" wx:if="{{defaultAddress!=null&&orderInfo.receiver_name==null}}">
+    <view>
+      <span>{{defaultAddress.receiver_name}}</span>
+      <span>{{defaultAddress.receiver_phone}}</span>
+    </view>
+    <view>{{orderInfo.receive_address}}</view>
+  </view>
+  <view class="middle" bindtap="selectAddr" wx:if="{{defaultAddress==null&&orderInfo.receiver_name==null}}">
+    <view>请选择地址</view>
+  </view>
+  <view class="middle" wx:if="{{orderInfo.receiver_name!=null}}">
+    <view>
+      <span>{{orderInfo.receiver_name}}</span>
+      <span>{{orderInfo.receiver_phone}}</span>
+    </view>
+    <view>{{orderInfo.receive_address}}</view>
+  </view>
+  <view class="group">
+    <view class="item_list">
+      <view class="item">
+        <view class="status"></view>
+        <navigator url="/pages/category/goods/goods?id={{orderInfo.goods_id}}" wx:if="{{item.state==2}}">
+          <view class="goods">
+            <image mode="aspectFill" class="left" src="{{orderInfo.goods_icon}}"></image>
+            <view class="right">
+              <view class="name">{{orderInfo.goods_name}}</view>
+              <view class="price">本团已预订{{preAmount}}件</view>
+            </view>
+          </view>
+        </navigator>
+        <view class="bot_item">
+          <view>
+            <span>商品单价：</span>
+            <span class="right">￥{{orderInfo.buy_price}}</span>
+          </view>
+          <view>
+            <span>数量：</span>
+            <span class="right">×{{orderInfo.buy_count}}</span>
+          </view>
+          <view>
+            <span>运费：</span>
+            <span class="right">￥0</span>
+          </view>
+          <view class="black">
+            <span>订单总价：</span>
+            <span class="right red">预支付：￥{{orderInfo.order_amounts}}</span>
+          </view>
+          <!--<p class="red tr">预支付：￥{{(orderInfo.order_amounts/100).toFixed(2)}}</p>-->
+        </view>
+        <view class="bot_item2">
+          <view>订单编号：{{orderInfo.order_no}}</view>
+          <view>下单时间：{{orderInfo.order_time}}</view>
+        </view>
+        <view class="bot_item2">
+          <view>配送方式：快递 免邮</view>
+          <view>配送时间：选填</view>
+        </view>
+        <view class="btn" wx:if="{{orderInfo.state==2}}">
+          <button class="cancel" bindtap="cancelOrder">取消订单</button>
+          <button class="sure" bindtap="payOrder">立即支付</button>
+        </view>
+        <p class="btn" wx:if="{{item.state==4}}">
+          <button class="sure" bindtap="pay_order">确认收货</button>
+        </p>
+      </view>
+    </view>
+  </view>
+</view>

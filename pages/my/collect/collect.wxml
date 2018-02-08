@@ -1,0 +1,21 @@
+<view class="collect">
+  <view wx:for="{{data_list}}" wx:key="{{index}}">
+    <navigator class="li" url="/pages/category/goods/goods?id={{item.goodsId}}">
+      <view class="c_left">
+        <image mode="aspectFill" src="{{item.goodsIcon}}"></image>
+      </view>
+      <view class="c_right">
+        <view class="name elli">{{item.goodsName}}</view>
+        <view wx:if="{{item.goodsState!=4}}">暂无报价</view>
+        <view>
+          <span>￥{{item.supplyPrice}}</span>
+          <span class="market_price">￥{{item.marketPrice}}</span>
+        </view>
+      </view>
+      <view wx:if="{{item.goodsState!=4}}">已失效</view>
+    </navigator>
+  </view>
+  <view class="no_data" wx:if="{{data_list==''}}" v-cloak>
+    <image src="http://192.168.18.148/images/no_data.png"></image>
+  </view>
+</view>

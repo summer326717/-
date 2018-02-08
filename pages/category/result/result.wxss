@@ -1,0 +1,61 @@
+.search .s_list {
+    padding: 10rpx;
+}
+
+.search .s_list .li {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    padding: 10rpx;
+}
+
+.search .s_list .li .item {
+    color: #222222;
+    border-radius: 10rpx;
+    border: 1px solid #ebecef;
+    overflow: hidden;
+}
+
+.search .s_list .li .item .tc {
+    height: 340rpx
+}
+
+.search .s_list .li .item image {
+    height: 100%;
+    width: 100%;
+    background: #f1f1f1;
+}
+
+.search .s_list .li .item .descr {
+    padding: 5rpx;
+    line-height: 35rpx;
+}
+
+.search .s_list .li .item .descr .name {
+    height: 75rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.search .s_list .li .item .price .sell_price {
+    color: #ee1529;
+}
+
+.search .s_list .li .item .price .market_price {
+    color: #808080;
+    font-size: 20rpx;
+    text-decoration: line-through;
+}
+
+.search .s_list .li .item .price .sold {
+    float: right;
+    font-size: 20rpx;
+    color: #808080;
+}
+
+.search .s_list .clearfix {
+    float: none;
+}
