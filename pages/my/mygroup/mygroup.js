@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    is_to_bottom: false,
     order_type: 9,
     page_no: 1,
     page_size: 10,
@@ -57,7 +58,6 @@ Page({
             })
           }
         }
-
       } else {
         base.toast('warn', res.message);
       }

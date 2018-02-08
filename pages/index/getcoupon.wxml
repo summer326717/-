@@ -19,4 +19,5 @@
       </view>
     </view>
   </view>
+  <view class="listnodata" wx:if="{{is_to_bottom}}">主人，已经到底啦</view>
 </view>

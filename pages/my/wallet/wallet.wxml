@@ -22,5 +22,6 @@
         <span wx:if="{{item.pay_type==2}}" class="fr red">-{{item.change_amount}}</span>
       </view>
     </view>
+    <view class="listnodata" wx:if="{{is_to_bottom}}">主人，已经到底啦</view>
   </view>
 </view>

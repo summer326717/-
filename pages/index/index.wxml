@@ -69,7 +69,7 @@
           </view>
         </navigator>
       </view>
-      <view class="listnodata" v-if="is_to_bottom">主人，已经到底啦</view>
+      <view class="listnodata" wx:if="{{is_to_bottom}}">主人，已经到底啦</view>
     </view>
     <view class="no_data" wx:if="{{data_list==''}}">
       <image src="http://192.168.18.148/images/no_data.png"></image>

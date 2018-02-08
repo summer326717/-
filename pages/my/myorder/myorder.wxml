@@ -63,5 +63,6 @@
     <view class="no_data" wx:if="{{order_list==''&&page_no==1}}">
       <image src="http://192.168.18.148/images/no_data.png"></image>
     </view>
+    <view class="listnodata" wx:if="{{is_to_bottom}}">主人，已经到底啦</view>
   </view>
 </view>
