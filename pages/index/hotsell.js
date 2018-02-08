@@ -15,11 +15,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (options.id) { //能使用优惠券的商品列表
+    this.getData(options.id);
+  },
+  getData(id) {
+    if (id) { //能使用优惠券的商品列表
       let json = {
         page_no: this.data.page_no,
         page_size: this.data.page_size,
-        supplier_id: options.id
+        supplier_id: id
       }
       base.http_post(json, "/goods/buyerQrySupplierGoods", res => {
         if (res.code == 0) {
@@ -49,9 +52,21 @@ Page({
       };
       base.http_post(json, '/goods/buyersQryBestSelling', res => {
         if (res.code == 0) {
-          this.setData({
-            data_list: res.data.resultList
-          })
+          if (this.data.page_no == 1) {
+            this.setData({
+              data_list: res.data.resultList
+            })
+          } else {
+            let result = base.concattArr(this.data.data_list, res.data.resultList);
+            this.setData({
+              data_list: result
+            })
+            if (res.data.resultList.length < this.data.page_size) {
+              this.setData({
+                is_to_bottom: true
+              })
+            }
+          }
         } else {
           base.toast('warn', res.message);
         }

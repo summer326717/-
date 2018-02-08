@@ -123,7 +123,3 @@ export function transTime(t, type) {
 function e(t) {
   return t > 9 ? t : '0' + t;
 }
-
-export function concattArr(olist, nlist) {
-  return olist.concat(nlist);
-}

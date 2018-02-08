@@ -94,7 +94,7 @@ Page({
     this.setData({
       page_no: 1
     })
-    this.getData();
+    this.getData(this.data.coupon_type);
     wx.stopPullDownRefresh()
   },
 
@@ -107,7 +107,7 @@ Page({
       this.setData({
         page_no: this.data.page_no + 1
       })
-      this.getData();
+      this.getData(this.data.coupon_type);
       wx.hideNavigationBarLoading();
     }
   },
